@@ -33,3 +33,4 @@ X <- cbind(1, X) #rep(1,length(Y))
 beta <- solve(t(X) %*% X)  %*% t(X) %*% Y
 res_manual <- t(Y - (X %*% beta)) %*% (Y - (X %*% beta))
 plot(Y,res_manual)
+#comment
