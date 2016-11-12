@@ -1,3 +1,8 @@
+#library(ggplot2)
+#library(plyr)
+#library(dplyr)
+#library(gapminder)
+#install.packages("gapminder")
 pop.delta <- gapminder %>%
   select(year, lifeExp, pop) %>%
   mutate(pop_change = 100*((pop - lag(pop)))/pop) %>%
