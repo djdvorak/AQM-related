@@ -1,0 +1,37 @@
+---
+title: "Gapminder Group Project"
+author: "David Dvorak, Elton Chan, Fanli Si, Jingyang Liu"
+date: "November 16, 2016"
+output: 
+  html_document: 
+    keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Our Hypothesis:
+Countries with higher per-capita GDP have higher life expectancies.
+
+# Our Analysis:
+
+```{r load_packages, message=FALSE, results='hide',include=FALSE}
+library(ggplot2)
+library(plyr)
+library(dplyr)
+library(gapminder)
+#install.packages("gapminder")
+```
+
+A couple potential plots:
+```{r}
+df <- gapminder %>%
+  mutate(gdpPercap_change = 100*((gdpPercap - lag(gdpPercap)))/gdpPercap) %>%
+  mutate(lifeExp_change = 100*((lifeExp - lag(lifeExp)))/lifeExp) %>%
+  filter(year > 1952)
+
+qplot(log(gdpPercap),lifeExp,data=df, color = continent)
+qplot(log(gdpPercap),lifeExp,data=df, color = year)
+```
+
