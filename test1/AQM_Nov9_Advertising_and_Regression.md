@@ -36,7 +36,19 @@ res <- residuals(mod)
 Plot Sales vs. Explanatory Variables
 
 ```r
-#qplot(TV,Sales) # tilda usage: Sales "depends on" TV. Equivalent to plot(TV,S)
-#qplot(Radio,Sales)
-#qplot(Newspaper,Sales)
+qplot(TV,Sales) # tilda usage: Sales "depends on" TV. Equivalent to plot(TV,S)
 ```
+
+![](AQM_Nov9_Advertising_and_Regression_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+```r
+qplot(Radio,Sales)
+```
+
+![](AQM_Nov9_Advertising_and_Regression_files/figure-html/unnamed-chunk-4-2.png)<!-- -->
+
+```r
+qplot(Newspaper,Sales)
+```
+
+![](AQM_Nov9_Advertising_and_Regression_files/figure-html/unnamed-chunk-4-3.png)<!-- -->
