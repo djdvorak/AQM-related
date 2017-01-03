@@ -1,15 +1,8 @@
----
-title: "AQM_Nov9_Advertising"
-author: "David Dvorak"
-date: "November 12, 2016"
-output: 
-  html_document: 
-    keep_md: true
----
+# AQM_Nov9_Advertising
+David Dvorak  
+November 12, 2016  
 
-```{r setup, include=FALSE}
-#knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ## Assignment Due Nov. 16, 2016
 
@@ -19,12 +12,10 @@ Derive and manually compute the following in R, then cross-check them to the R o
 * Residuals using matrix notation.
 * Plot residuals against each explanitory variable. Interpret.
 
-```{r load_packages, message=FALSE, results='hide',include=FALSE}
-library(ggplot2)
-#setwd("~/GitHub/Dvorak_David/Advertising_and_Regression")
-```
+
 Input the data on Sales vs. spending on TV, Newpaper and Radio advertising
-```{r}
+
+```r
 dat.adv <- read.csv("Advertising.csv")
 Sales <- dat.adv$Sales
 TV <- dat.adv$TV
@@ -32,16 +23,19 @@ Radio <- dat.adv$Radio
 Newspaper <- dat.adv$Newspaper
 ```
 Linear least squares regression for each of the possible explanatory variables
-```{r}
+
+```r
 mod <- lm(Sales ~ TV+Radio+Newspaper, dat.adv)
 ```
 Residuals for linear least squares fitting
-```{r}
+
+```r
 res <- residuals(mod)
 ```
 
 Plot Sales vs. Explanatory Variables
-```{r}
+
+```r
 #qplot(TV,Sales) # tilda usage: Sales "depends on" TV. Equivalent to plot(TV,S)
 #qplot(Radio,Sales)
 #qplot(Newspaper,Sales)
