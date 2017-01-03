@@ -39,11 +39,3 @@ Residuals for linear least squares fitting
 ```{r}
 res <- residuals(mod)
 ```
-
-Plot Sales vs. Explanatory Variables
-```{r}
-qplot(TV,Sales) # tilda usage: Sales "depends on" TV. Equivalent to plot(TV,S)
-qplot(Radio,Sales)
-qplot(Newspaper,Sales)
-```
-
